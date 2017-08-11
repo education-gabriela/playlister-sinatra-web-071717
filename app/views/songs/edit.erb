@@ -14,13 +14,13 @@
   </ul>
 
   Artist:
-  <select name="song[artist_id]" id="Artist Name">
+  <select name="song[artist_id]">
     <option value="">---</option>
     <% @artists.each do |artist| %>
         <% selected = @song.artist.id == artist.id ? "selected" : "" %>
         <option <%= selected %> value="<%= artist.id %>"><%= artist.name %></option>
-    <% end %>
+    <% end %> or add a new one <input name="artist[name]" type="text" id="Artist Name">
   </select>
   <br><br>
-  <input type="submit" id="submit" value="Update Song">
+  <input type="submit" id="Save" value="Save">
 </form>
